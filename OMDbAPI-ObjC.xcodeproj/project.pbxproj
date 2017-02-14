@@ -7,25 +7,57 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E0D6EA61E4DC98300E5986E /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0D6EA51E4DC98300E5986E /* APIManager.m */; };
+		5E0D6EAA1E4DC9F700E5986E /* FilmModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0D6EA91E4DC9F700E5986E /* FilmModel.m */; };
+		5E0D6EAD1E4DF72000E5986E /* FilmListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0D6EAC1E4DF72000E5986E /* FilmListViewController.m */; };
+		5E0D6EB11E4DF74300E5986E /* FilmListService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0D6EB01E4DF74300E5986E /* FilmListService.m */; };
+		5E0D6EB41E4DF75C00E5986E /* FilmListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0D6EB31E4DF75C00E5986E /* FilmListModel.m */; };
+		5E0D6EB71E4DF77300E5986E /* FilmTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0D6EB61E4DF77300E5986E /* FilmTableViewCell.m */; };
+		5E0D6EBA1E4DF7B700E5986E /* FilmDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0D6EB91E4DF7B700E5986E /* FilmDetailViewController.m */; };
+		5E0D6EBE1E4DF7DA00E5986E /* FilmDetailService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0D6EBD1E4DF7DA00E5986E /* FilmDetailService.m */; };
+		5E0D6EC11E4DF7E900E5986E /* FilmDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0D6EC01E4DF7E900E5986E /* FilmDetailModel.m */; };
 		5E16AC2C1E4CA94200036E87 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E16AC2B1E4CA94200036E87 /* main.m */; };
 		5E16AC2F1E4CA94200036E87 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E16AC2E1E4CA94200036E87 /* AppDelegate.m */; };
-		5E16AC321E4CA94200036E87 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E16AC311E4CA94200036E87 /* ViewController.m */; };
 		5E16AC351E4CA94200036E87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E16AC331E4CA94200036E87 /* Main.storyboard */; };
 		5E16AC371E4CA94200036E87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E16AC361E4CA94200036E87 /* Assets.xcassets */; };
 		5E16AC3A1E4CA94200036E87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E16AC381E4CA94200036E87 /* LaunchScreen.storyboard */; };
+		5E85227F1E5257C0000A3F36 /* FilmRealm.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E85227E1E5257C0000A3F36 /* FilmRealm.m */; };
+		F7E105D21CDB340E489D4F9E /* libPods-OMDbAPI-ObjC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E26038B084A66259A1F072E /* libPods-OMDbAPI-ObjC.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4728220369B1E91A113ECBDD /* Pods-OMDbAPI-ObjC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OMDbAPI-ObjC.release.xcconfig"; path = "Pods/Target Support Files/Pods-OMDbAPI-ObjC/Pods-OMDbAPI-ObjC.release.xcconfig"; sourceTree = "<group>"; };
+		5E0D6EA41E4DC98300E5986E /* APIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
+		5E0D6EA51E4DC98300E5986E /* APIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
+		5E0D6EA81E4DC9F700E5986E /* FilmModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilmModel.h; sourceTree = "<group>"; };
+		5E0D6EA91E4DC9F700E5986E /* FilmModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilmModel.m; sourceTree = "<group>"; };
+		5E0D6EAB1E4DF72000E5986E /* FilmListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilmListViewController.h; sourceTree = "<group>"; };
+		5E0D6EAC1E4DF72000E5986E /* FilmListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilmListViewController.m; sourceTree = "<group>"; };
+		5E0D6EAF1E4DF74300E5986E /* FilmListService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilmListService.h; sourceTree = "<group>"; };
+		5E0D6EB01E4DF74300E5986E /* FilmListService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilmListService.m; sourceTree = "<group>"; };
+		5E0D6EB21E4DF75C00E5986E /* FilmListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilmListModel.h; sourceTree = "<group>"; };
+		5E0D6EB31E4DF75C00E5986E /* FilmListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilmListModel.m; sourceTree = "<group>"; };
+		5E0D6EB51E4DF77300E5986E /* FilmTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilmTableViewCell.h; sourceTree = "<group>"; };
+		5E0D6EB61E4DF77300E5986E /* FilmTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilmTableViewCell.m; sourceTree = "<group>"; };
+		5E0D6EB81E4DF7B700E5986E /* FilmDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilmDetailViewController.h; sourceTree = "<group>"; };
+		5E0D6EB91E4DF7B700E5986E /* FilmDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilmDetailViewController.m; sourceTree = "<group>"; };
+		5E0D6EBC1E4DF7DA00E5986E /* FilmDetailService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilmDetailService.h; sourceTree = "<group>"; };
+		5E0D6EBD1E4DF7DA00E5986E /* FilmDetailService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilmDetailService.m; sourceTree = "<group>"; };
+		5E0D6EBF1E4DF7E900E5986E /* FilmDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilmDetailModel.h; sourceTree = "<group>"; };
+		5E0D6EC01E4DF7E900E5986E /* FilmDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilmDetailModel.m; sourceTree = "<group>"; };
 		5E16AC271E4CA94200036E87 /* OMDbAPI-ObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OMDbAPI-ObjC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E16AC2B1E4CA94200036E87 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5E16AC2D1E4CA94200036E87 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5E16AC2E1E4CA94200036E87 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5E16AC301E4CA94200036E87 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5E16AC311E4CA94200036E87 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		5E16AC341E4CA94200036E87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5E16AC361E4CA94200036E87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E16AC391E4CA94200036E87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E16AC3B1E4CA94200036E87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E85227D1E5257BF000A3F36 /* FilmRealm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilmRealm.h; sourceTree = "<group>"; };
+		5E85227E1E5257C0000A3F36 /* FilmRealm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilmRealm.m; sourceTree = "<group>"; };
+		5EAD4D811E4E035600183F38 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		65165E78CB88914586EB8ED4 /* Pods-OMDbAPI-ObjC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OMDbAPI-ObjC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OMDbAPI-ObjC/Pods-OMDbAPI-ObjC.debug.xcconfig"; sourceTree = "<group>"; };
+		7E26038B084A66259A1F072E /* libPods-OMDbAPI-ObjC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OMDbAPI-ObjC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +65,69 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7E105D21CDB340E489D4F9E /* libPods-OMDbAPI-ObjC.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E0D6EA01E4CEDC700E5986E /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				5EAD4D811E4E035600183F38 /* Constants.h */,
+				5E0D6EA41E4DC98300E5986E /* APIManager.h */,
+				5E0D6EA51E4DC98300E5986E /* APIManager.m */,
+			);
+			name = Manager;
+			sourceTree = "<group>";
+		};
+		5E0D6EA71E4DC9D100E5986E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5E0D6EA81E4DC9F700E5986E /* FilmModel.h */,
+				5E0D6EA91E4DC9F700E5986E /* FilmModel.m */,
+				5E85227D1E5257BF000A3F36 /* FilmRealm.h */,
+				5E85227E1E5257C0000A3F36 /* FilmRealm.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		5E0D6EAE1E4DF72A00E5986E /* FilmList */ = {
+			isa = PBXGroup;
+			children = (
+				5E0D6EAB1E4DF72000E5986E /* FilmListViewController.h */,
+				5E0D6EAC1E4DF72000E5986E /* FilmListViewController.m */,
+				5E0D6EAF1E4DF74300E5986E /* FilmListService.h */,
+				5E0D6EB01E4DF74300E5986E /* FilmListService.m */,
+				5E0D6EB21E4DF75C00E5986E /* FilmListModel.h */,
+				5E0D6EB31E4DF75C00E5986E /* FilmListModel.m */,
+				5E0D6EB51E4DF77300E5986E /* FilmTableViewCell.h */,
+				5E0D6EB61E4DF77300E5986E /* FilmTableViewCell.m */,
+			);
+			name = FilmList;
+			sourceTree = "<group>";
+		};
+		5E0D6EBB1E4DF7BF00E5986E /* FilmDetail */ = {
+			isa = PBXGroup;
+			children = (
+				5E0D6EB81E4DF7B700E5986E /* FilmDetailViewController.h */,
+				5E0D6EB91E4DF7B700E5986E /* FilmDetailViewController.m */,
+				5E0D6EBC1E4DF7DA00E5986E /* FilmDetailService.h */,
+				5E0D6EBD1E4DF7DA00E5986E /* FilmDetailService.m */,
+				5E0D6EBF1E4DF7E900E5986E /* FilmDetailModel.h */,
+				5E0D6EC01E4DF7E900E5986E /* FilmDetailModel.m */,
+			);
+			name = FilmDetail;
+			sourceTree = "<group>";
+		};
 		5E16AC1E1E4CA94200036E87 = {
 			isa = PBXGroup;
 			children = (
 				5E16AC291E4CA94200036E87 /* OMDbAPI-ObjC */,
 				5E16AC281E4CA94200036E87 /* Products */,
+				A51A417876F792252B78C887 /* Pods */,
+				9F4D685F891B37D537758CA7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,11 +144,13 @@
 			children = (
 				5E16AC2D1E4CA94200036E87 /* AppDelegate.h */,
 				5E16AC2E1E4CA94200036E87 /* AppDelegate.m */,
-				5E16AC301E4CA94200036E87 /* ViewController.h */,
-				5E16AC311E4CA94200036E87 /* ViewController.m */,
+				5E0D6EA01E4CEDC700E5986E /* Manager */,
+				5E0D6EAE1E4DF72A00E5986E /* FilmList */,
+				5E0D6EBB1E4DF7BF00E5986E /* FilmDetail */,
+				5E0D6EA71E4DC9D100E5986E /* Models */,
 				5E16AC331E4CA94200036E87 /* Main.storyboard */,
-				5E16AC361E4CA94200036E87 /* Assets.xcassets */,
 				5E16AC381E4CA94200036E87 /* LaunchScreen.storyboard */,
+				5E16AC361E4CA94200036E87 /* Assets.xcassets */,
 				5E16AC3B1E4CA94200036E87 /* Info.plist */,
 				5E16AC2A1E4CA94200036E87 /* Supporting Files */,
 			);
@@ -79,6 +165,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		9F4D685F891B37D537758CA7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7E26038B084A66259A1F072E /* libPods-OMDbAPI-ObjC.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A51A417876F792252B78C887 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				65165E78CB88914586EB8ED4 /* Pods-OMDbAPI-ObjC.debug.xcconfig */,
+				4728220369B1E91A113ECBDD /* Pods-OMDbAPI-ObjC.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +189,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5E16AC3E1E4CA94200036E87 /* Build configuration list for PBXNativeTarget "OMDbAPI-ObjC" */;
 			buildPhases = (
+				F2C2D8CA5DCD963D1F72D7A3 /* [CP] Check Pods Manifest.lock */,
 				5E16AC231E4CA94200036E87 /* Sources */,
 				5E16AC241E4CA94200036E87 /* Frameworks */,
 				5E16AC251E4CA94200036E87 /* Resources */,
+				FA49375508D155A72A3487CD /* [CP] Embed Pods Frameworks */,
+				57EAE39891F60ADA477987A6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -146,14 +252,71 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		57EAE39891F60ADA477987A6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OMDbAPI-ObjC/Pods-OMDbAPI-ObjC-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F2C2D8CA5DCD963D1F72D7A3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FA49375508D155A72A3487CD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OMDbAPI-ObjC/Pods-OMDbAPI-ObjC-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5E16AC231E4CA94200036E87 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E16AC321E4CA94200036E87 /* ViewController.m in Sources */,
+				5E0D6EAD1E4DF72000E5986E /* FilmListViewController.m in Sources */,
 				5E16AC2F1E4CA94200036E87 /* AppDelegate.m in Sources */,
+				5E0D6EBA1E4DF7B700E5986E /* FilmDetailViewController.m in Sources */,
+				5E0D6EC11E4DF7E900E5986E /* FilmDetailModel.m in Sources */,
 				5E16AC2C1E4CA94200036E87 /* main.m in Sources */,
+				5E0D6EA61E4DC98300E5986E /* APIManager.m in Sources */,
+				5E0D6EB11E4DF74300E5986E /* FilmListService.m in Sources */,
+				5E0D6EAA1E4DC9F700E5986E /* FilmModel.m in Sources */,
+				5E0D6EBE1E4DF7DA00E5986E /* FilmDetailService.m in Sources */,
+				5E0D6EB71E4DF77300E5986E /* FilmTableViewCell.m in Sources */,
+				5E85227F1E5257C0000A3F36 /* FilmRealm.m in Sources */,
+				5E0D6EB41E4DF75C00E5986E /* FilmListModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +432,7 @@
 		};
 		5E16AC3F1E4CA94200036E87 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65165E78CB88914586EB8ED4 /* Pods-OMDbAPI-ObjC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = D67XBEEN3L;
@@ -281,6 +445,7 @@
 		};
 		5E16AC401E4CA94200036E87 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4728220369B1E91A113ECBDD /* Pods-OMDbAPI-ObjC.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = D67XBEEN3L;
@@ -310,6 +475,7 @@
 				5E16AC401E4CA94200036E87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
