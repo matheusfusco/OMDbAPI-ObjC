@@ -11,4 +11,5 @@ target 'OMDbAPI-ObjC' do
 	pod 'AFNetworking'
 	pod 'MBProgressHUD'
 	pod 'SDWebImage'
+	pod 'iCarousel'
 end

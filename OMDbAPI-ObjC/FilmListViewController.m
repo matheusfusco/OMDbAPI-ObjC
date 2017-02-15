@@ -21,7 +21,7 @@
 @end
 
 @implementation FilmListViewController
-@synthesize filmTableView, filmPoster, searchFilmBar;
+@synthesize filmTableView, filmPoster, searchFilmBar, iCarouselView;
 
 #pragma mark - View & Initialization Methods
 - (void)viewDidLoad {
@@ -31,6 +31,8 @@
     
     searchFilmBar.delegate = self;
     isFiltering = false;
+    
+    iCarouselView.type = iCarouselTypeCoverFlow;
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -38,6 +40,8 @@
 
     realm = [RLMRealm defaultRealm];
     filmResults = [FilmRealm allObjectsInRealm:realm];
+    
+    [iCarouselView reloadData];
     [filmTableView reloadData];
 }
 
@@ -104,6 +108,7 @@
         }
     }
     [filmTableView reloadData];
+    [iCarouselView reloadData];
 }
 
 -(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
@@ -118,6 +123,51 @@
 -(void) dismissTheKeyBoard:(id)sender {
     [searchFilmBar resignFirstResponder];
     [self.view removeGestureRecognizer:tap];
+}
+
+#pragma mark - iCarousel Delegate & DataSource Methods
+-(NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel {
+    if (isFiltering) {
+        return filteredFilms.count;
+    }
+    else {
+        return filmResults.count;
+    }
+}
+
+-(UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view {
+    
+    if (view == nil) {
+        view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200.0f, 200.0f)];
+        
+        if (isFiltering) {
+            FilmModel * film = [[FilmModel alloc] init];
+            film = filteredFilms[index];
+            [((UIImageView *)view) sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@", film.poster]]];
+        }
+        else {
+            FilmRealm * film = [[FilmRealm alloc] init];
+            film = filmResults[index];
+            [((UIImageView *)view) sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@", film.poster]]];
+        }
+        //[((UIImageView *)view) sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@", film.poster]]];
+        [((UIImageView *)view) setContentMode:UIViewContentModeScaleAspectFit];
+    }
+    
+    return view;
+}
+
+- (CGFloat)carousel:(iCarousel *)carousel valueForOption:(iCarouselOption)option withDefault:(CGFloat)value
+{
+    if (option == iCarouselOptionSpacing)
+    {
+        return value * 1.1;
+    }
+    return value;
+}
+
+-(void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index {
+    
 }
 
 #pragma mark - Memory Management

@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - iCarousel (1.8.2)
   - Mantle (2.0.7):
     - Mantle/extobjc (= 2.0.7)
   - Mantle/extobjc (2.0.7)
@@ -27,6 +28,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - iCarousel
   - Mantle
   - MBProgressHUD
   - Realm
@@ -34,11 +36,12 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  iCarousel: 67c8a43da5a46795b56aadfc96cd36a16f6149b2
   Mantle: bc40bb061d8c2c6fb48d5083e04d928c3b7f73d9
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   Realm: 9d5c46a4d7d27958530a8dfc58f63a99e5c2cba3
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
 
-PODFILE CHECKSUM: 5ec6bee658a74d946f2fbde0fe8288edde57d20b
+PODFILE CHECKSUM: 2293230281e94f0ad8d0257e58966506b3dadf0e
 
 COCOAPODS: 1.0.1

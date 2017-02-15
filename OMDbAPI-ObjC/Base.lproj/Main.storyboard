@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -238,7 +239,7 @@
             </objects>
             <point key="canvasLocation" x="-284" y="98"/>
         </scene>
-        <!--OMDb-->
+        <!--Data Source-->
         <scene sceneID="0pp-FD-rPd">
             <objects>
                 <viewController id="lWE-Tt-vgg" customClass="FilmListViewController" sceneMemberID="viewController">
@@ -250,14 +251,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GFC-Xc-qVT">
-                                <rect key="frame" x="0.0" y="107" width="375" height="182"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="182" id="5r3-Z2-WjL"/>
-                                </constraints>
-                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="62" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hmb-cy-v7H">
-                                <rect key="frame" x="0.0" y="297" width="375" height="370"/>
+                                <rect key="frame" x="0.0" y="308" width="375" height="359"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -266,7 +261,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="58"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h8r-fU-MXM" id="Tbi-5j-XcP">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="58"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="57"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w9w-fK-HR5">
@@ -277,7 +272,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFS-O4-k1O">
-                                                    <rect key="frame" x="66" y="20.5" width="301" height="18.5"/>
+                                                    <rect key="frame" x="66" y="21" width="301" height="16"/>
                                                     <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -290,6 +285,8 @@
                                                 <constraint firstItem="w9w-fK-HR5" firstAttribute="top" secondItem="Tbi-5j-XcP" secondAttribute="topMargin" constant="-4" id="XDz-fw-lYP"/>
                                                 <constraint firstItem="w9w-fK-HR5" firstAttribute="leading" secondItem="Tbi-5j-XcP" secondAttribute="leadingMargin" id="jsB-Xu-Bt4"/>
                                                 <constraint firstItem="gFS-O4-k1O" firstAttribute="trailing" secondItem="Tbi-5j-XcP" secondAttribute="trailingMargin" id="knL-0O-MId"/>
+                                                <constraint firstItem="gFS-O4-k1O" firstAttribute="top" secondItem="Tbi-5j-XcP" secondAttribute="topMargin" constant="13" id="ojv-Es-9Xj"/>
+                                                <constraint firstItem="w9w-fK-HR5" firstAttribute="centerY" secondItem="Tbi-5j-XcP" secondAttribute="centerY" id="v7u-so-opc"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -311,31 +308,47 @@
                                     <outlet property="delegate" destination="lWE-Tt-vgg" id="tZ8-lM-HF4"/>
                                 </connections>
                             </searchBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zoO-lO-ftK" customClass="iCarousel">
+                                <rect key="frame" x="0.0" y="108" width="375" height="200"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="5dc-dW-xQg"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="lWE-Tt-vgg" id="dJZ-gU-mwJ"/>
+                                    <outlet property="delegate" destination="lWE-Tt-vgg" id="u6m-br-81U"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Pev-LC-VLE" firstAttribute="leading" secondItem="GFC-Xc-qVT" secondAttribute="leading" id="7zv-Oc-wdF"/>
-                            <constraint firstItem="hmb-cy-v7H" firstAttribute="top" secondItem="GFC-Xc-qVT" secondAttribute="bottom" constant="8" symbolic="YES" id="8mg-jD-Drn"/>
-                            <constraint firstItem="Pev-LC-VLE" firstAttribute="leading" secondItem="1dl-Y6-tas" secondAttribute="leading" id="H5q-bJ-kPG"/>
-                            <constraint firstItem="hmb-cy-v7H" firstAttribute="bottom" secondItem="4d6-5y-JEz" secondAttribute="top" id="RCZ-Hq-4r0"/>
-                            <constraint firstItem="Pev-LC-VLE" firstAttribute="trailing" secondItem="GFC-Xc-qVT" secondAttribute="trailing" id="YFu-Rh-7of"/>
-                            <constraint firstItem="GFC-Xc-qVT" firstAttribute="top" secondItem="E68-7N-wMp" secondAttribute="bottom" constant="43" id="clW-A9-zAQ"/>
-                            <constraint firstItem="Pev-LC-VLE" firstAttribute="top" secondItem="E68-7N-wMp" secondAttribute="bottom" id="cxf-X4-f6g"/>
-                            <constraint firstItem="GFC-Xc-qVT" firstAttribute="leading" secondItem="hmb-cy-v7H" secondAttribute="leading" id="hWk-gB-qwa"/>
-                            <constraint firstItem="GFC-Xc-qVT" firstAttribute="trailing" secondItem="hmb-cy-v7H" secondAttribute="trailing" id="sUS-cH-aIB"/>
-                            <constraint firstAttribute="trailing" secondItem="Pev-LC-VLE" secondAttribute="trailing" id="t0Z-36-mgB"/>
+                            <constraint firstItem="zoO-lO-ftK" firstAttribute="top" secondItem="Pev-LC-VLE" secondAttribute="bottom" id="2vA-R5-uIn"/>
+                            <constraint firstAttribute="trailing" secondItem="hmb-cy-v7H" secondAttribute="trailing" id="88f-TO-nUa"/>
+                            <constraint firstItem="Pev-LC-VLE" firstAttribute="leading" secondItem="1dl-Y6-tas" secondAttribute="leading" id="AMW-8E-EJm"/>
+                            <constraint firstItem="hmb-cy-v7H" firstAttribute="top" secondItem="zoO-lO-ftK" secondAttribute="bottom" id="B6Z-rB-SnK"/>
+                            <constraint firstItem="hmb-cy-v7H" firstAttribute="leading" secondItem="1dl-Y6-tas" secondAttribute="leading" id="H2N-Y9-XGq"/>
+                            <constraint firstAttribute="trailing" secondItem="zoO-lO-ftK" secondAttribute="trailing" id="PcC-Lf-75x"/>
+                            <constraint firstItem="zoO-lO-ftK" firstAttribute="top" secondItem="Pev-LC-VLE" secondAttribute="bottom" id="Tef-FA-eoN"/>
+                            <constraint firstItem="Pev-LC-VLE" firstAttribute="top" secondItem="E68-7N-wMp" secondAttribute="bottom" id="XSb-sG-llA"/>
+                            <constraint firstItem="zoO-lO-ftK" firstAttribute="leading" secondItem="1dl-Y6-tas" secondAttribute="leading" id="nMf-pK-zkq"/>
+                            <constraint firstItem="4d6-5y-JEz" firstAttribute="top" secondItem="hmb-cy-v7H" secondAttribute="bottom" id="pOv-aN-oSX"/>
+                            <constraint firstItem="hmb-cy-v7H" firstAttribute="top" secondItem="zoO-lO-ftK" secondAttribute="bottom" id="r7g-qR-s2L"/>
+                            <constraint firstAttribute="trailing" secondItem="Pev-LC-VLE" secondAttribute="trailing" id="zSc-iv-nXP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="OMDb" id="D80-Lp-rUF">
-                        <barButtonItem key="rightBarButtonItem" title="Adicionar" id="zQi-dn-CzT">
-                            <connections>
-                                <segue destination="aox-8N-eI1" kind="show" id="SF8-P9-S2E"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem image="add" id="zQi-dn-CzT">
+                                <connections>
+                                    <segue destination="aox-8N-eI1" kind="show" id="SF8-P9-S2E"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="search" id="b5y-JE-oGJ"/>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
-                        <outlet property="filmPoster" destination="GFC-Xc-qVT" id="kFA-Kg-IyP"/>
                         <outlet property="filmTableView" destination="hmb-cy-v7H" id="rPP-He-M5G"/>
+                        <outlet property="iCarouselView" destination="zoO-lO-ftK" id="xjm-c3-sG5"/>
                         <outlet property="searchFilmBar" destination="Pev-LC-VLE" id="XJa-Yf-Fhm"/>
                     </connections>
                 </viewController>
@@ -344,4 +357,8 @@
             <point key="canvasLocation" x="445.60000000000002" y="97.601199400299862"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="add" width="22" height="22"/>
+        <image name="search" width="22" height="22"/>
+    </resources>
 </document>
