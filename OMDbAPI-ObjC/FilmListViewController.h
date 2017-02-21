@@ -12,13 +12,14 @@
 #import <iCarousel.h>
 #import "FilmRealm.h"
 #import "FilmTableViewCell.h"
+#import "FilmDetailViewController.h"
 
 @interface FilmListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UISearchBarDelegate, UIGestureRecognizerDelegate, iCarouselDelegate, iCarouselDataSource>
 
-@property (weak, nonatomic) IBOutlet UITableView *filmTableView;
-@property (weak, nonatomic) IBOutlet UIImageView *filmPoster;
-@property (weak, nonatomic) IBOutlet UISearchBar *searchFilmBar;
-@property (weak, nonatomic) IBOutlet iCarousel *iCarouselView;
+@property (weak, nonatomic) IBOutlet UITableView * filmTableView;
+@property (weak, nonatomic) IBOutlet UIImageView * filmPoster;
+@property (weak, nonatomic) IBOutlet UISearchBar * searchFilmBar;
+@property (weak, nonatomic) IBOutlet iCarousel   * iCarouselView;
 
 @end
 

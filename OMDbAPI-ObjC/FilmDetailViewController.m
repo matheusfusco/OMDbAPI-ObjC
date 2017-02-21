@@ -12,7 +12,6 @@
 @interface FilmDetailViewController () {
     FilmDetailModel * model;
     MBProgressHUD * hud;
-    FilmModel * filmModel;
     
     UITapGestureRecognizer * tap;
 }
@@ -20,7 +19,7 @@
 @end
 
 @implementation FilmDetailViewController
-
+@synthesize filmModel, addFilmButton;
 #pragma mark - Initialization View Methods
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,6 +27,13 @@
     
     model = [[FilmDetailModel alloc] init];
     model.delegate = self;
+    
+    if (filmModel) {
+        [_searchFilmTextField setHidden:YES];
+        [addFilmButton setHidden:YES];
+        self.navigationItem.title = @"Detalhes do filme";
+        [self layoutViewWithFilm:filmModel];
+    }
 }
 
 #pragma mark - Button Actions
@@ -35,7 +41,6 @@
     if (filmModel) {
         [model saveFilmToFavorites:filmModel completion:^(BOOL success) {
             if (success) {
-                //[self showAlertWithTitle:@"Sucesso" andMessage:@"Filme adicionado com sucesso!"];
                 [self.navigationController popToRootViewControllerAnimated:YES];
             }
             else {
@@ -53,17 +58,7 @@
     [hud hideAnimated:YES];
     
     if ([film.response boolValue]) {
-        filmModel = [FilmModel new];
-        filmModel = film;
-        
-        _filmTitleLabel.text = film.title;
-        _releasedDateLabel.text = film.releasedDate;
-        _durationLabel.text = film.duration;
-        _genreLabel.text = film.genre;
-        _directorLabel.text = film.director;
-        _actorsLabel.text = film.actors;
-        _plotLabel.text = film.plot;
-        [_posterImgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@", film.poster]]];
+        [self layoutViewWithFilm: film];
     }
     else {
         [self showAlertWithTitle:@"Erro" andMessage:@"Filme não encontrado!"];
@@ -75,6 +70,7 @@
     [self showAlertWithTitle:@"Erro" andMessage:@"Ocorreu um erro. Tente novamente mais tarde."];
 }
 
+#pragma mark - Custom Methods
 -(void) showAlertWithTitle:(NSString *)title andMessage:(NSString *) message {
     filmModel = nil;
     
@@ -92,6 +88,20 @@
     UIAlertAction * ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil];
     [alert addAction:ok];
     [self presentViewController:alert animated:YES completion:nil];
+}
+
+-(void)layoutViewWithFilm:(FilmModel*)film {
+    filmModel = [FilmModel new];
+    filmModel = film;
+    
+    _filmTitleLabel.text = filmModel.title;
+    _releasedDateLabel.text = filmModel.releasedDate;
+    _durationLabel.text = filmModel.duration;
+    _genreLabel.text = filmModel.genre;
+    _directorLabel.text = filmModel.director;
+    _actorsLabel.text = filmModel.actors;
+    _plotLabel.text = filmModel.plot;
+    [_posterImgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@", filmModel.poster]]];
 }
 
 #pragma mark - TextField Delegate Methods

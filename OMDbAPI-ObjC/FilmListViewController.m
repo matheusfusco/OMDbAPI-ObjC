@@ -16,6 +16,8 @@
     BOOL isFiltering;
     
     UITapGestureRecognizer * tap;
+    
+    FilmModel * filmModel;
 }
 
 @end
@@ -33,6 +35,9 @@
     isFiltering = false;
     
     iCarouselView.type = iCarouselTypeCoverFlow;
+    [iCarouselView setBounces:NO];
+    
+    filmModel = [[FilmModel alloc] init];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -80,6 +85,16 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [iCarouselView scrollToItemAtIndex:indexPath.row animated:YES];
+    
+    if (isFiltering) {
+        filmModel = filteredFilms[indexPath.row];
+    }
+    else {
+        filmModel = filmResults[indexPath.row];
+    }
+    
+    [self performSegueWithIdentifier:@"showFilmDetail" sender:self];
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
@@ -94,6 +109,7 @@
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     if (searchText.length == 0) {
         isFiltering = false;
+        filteredFilms = nil;
     }
     else {
         isFiltering = true;
@@ -140,17 +156,15 @@
     if (view == nil) {
         view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200.0f, 200.0f)];
         
+        //FilmModel * film = [[FilmModel alloc] init];
         if (isFiltering) {
-            FilmModel * film = [[FilmModel alloc] init];
-            film = filteredFilms[index];
-            [((UIImageView *)view) sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@", film.poster]]];
+            filmModel = filteredFilms[index];
         }
         else {
-            FilmRealm * film = [[FilmRealm alloc] init];
-            film = filmResults[index];
-            [((UIImageView *)view) sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@", film.poster]]];
+            filmModel = filmResults[index];
         }
-        //[((UIImageView *)view) sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@", film.poster]]];
+        
+        [((UIImageView *)view) sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@", filmModel.poster]]];
         [((UIImageView *)view) setContentMode:UIViewContentModeScaleAspectFit];
     }
     
@@ -167,7 +181,22 @@
 }
 
 -(void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index {
-    
+    if (isFiltering) {
+        filmModel = filteredFilms[index];
+    }
+    else {
+        filmModel = filmResults[index];
+    }
+    [self performSegueWithIdentifier:@"showFilmDetail" sender:self];
+    //NSLog(@"film selected: %@", film);
+}
+
+#pragma mark - Navigation
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showFilmDetail"]) {
+        FilmDetailViewController * vc = segue.destinationViewController;
+        [vc setFilmModel:filmModel];
+    }
 }
 
 #pragma mark - Memory Management

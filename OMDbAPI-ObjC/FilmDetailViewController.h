@@ -14,6 +14,7 @@
 
 @interface FilmDetailViewController : UIViewController <FilmDetailDelegate, UITextFieldDelegate>
 
+@property (nonatomic, strong) FilmModel * filmModel;
 @property (weak, nonatomic) IBOutlet UITextField *searchFilmTextField;
 @property (weak, nonatomic) IBOutlet UIImageView *posterImgView;
 @property (weak, nonatomic) IBOutlet UILabel *filmTitleLabel;
@@ -24,5 +25,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *actorsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *plotLabel;
 - (IBAction)addFilmButtonClicked:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *addFilmButton;
 
 @end
